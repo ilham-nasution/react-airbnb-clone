@@ -1,18 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import FlatList from "./components/FlatList";
 
-import '../assets/stylesheets/application.scss';
+import "../assets/stylesheets/application.scss";
 
-const Hello = ({ name }) => {
-  return (
-    <div>
-      Hello,
-      {name}
-    </div>
-  );
-};
+class App extends Component {
+  render() {
+    return (
+      <div className="container-fluid">
+        <h1>Flat Lists</h1>
+        <div className="col-6">
+          <FlatList />
+        </div>
+      </div>
+    );
+  }
+}
 
-const root = document.getElementById('root');
+const root = document.getElementById("root");
 if (root) {
-  ReactDOM.render(<Hello name="World" />, root);
+  ReactDOM.render(<App />, root);
 }
